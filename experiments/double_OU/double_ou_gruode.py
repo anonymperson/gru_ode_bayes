@@ -21,6 +21,7 @@ parser.add_argument('--demo', action = "store_true", default = False)
 
 args = parser.parse_args()
 if args.demo:
+    print(f"Demo Mode - Loading model for double_OU ....")
     gru_ode_bayes.paper_plotting.plot_trained_model(model_name = "double_OU_gru_ode_bayes_demo")
     exit()
 
