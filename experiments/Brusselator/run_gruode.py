@@ -15,7 +15,7 @@ parser.add_argument('--dataset', type=str, help="Dataset CSV file", default="../
 parser.add_argument('--mixing', type=float, help="Mixing multiplier", default=1e-4)
 parser.add_argument('--seed', type=int, help="Seed for data split generation", default=432)
 parser.add_argument('--solver', type=str, choices=["euler", "midpoint","dopri5"], default="dopri5")
-parser.add_argument('--no_impute',action="store_true",default = False)
+parser.add_argument('--no_impute',action="store_true",default = True)
 parser.add_argument('--demo',action="store_true",default = False)
 
 args = parser.parse_args()
