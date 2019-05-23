@@ -14,7 +14,7 @@ parser.add_argument('--model_name', type=str, help="Model to use", default="BXLa
 parser.add_argument('--dataset', type=str, help="Dataset CSV file", default="../../gru_ode_bayes/datasets/BXLator/BXLator.csv")
 parser.add_argument('--mixing', type=float, help="Mixing multiplier", default=1e-4)
 parser.add_argument('--seed', type=int, help="Seed for data split generation", default=432)
-parser.add_argument('--solver', type=str, choices=["euler", "midpoint","dopri5"], default="dopri5")
+parser.add_argument('--solver', type=str, choices=["euler", "midpoint","dopri5"], default="euler")
 parser.add_argument('--no_impute',action="store_true",default = True)
 parser.add_argument('--demo',action="store_true",default = False)
 
@@ -62,7 +62,7 @@ params_dict["T"]           = T
 summary_dict ={"model_params":params_dict,"metadata":metadata}
 np.save(f"./../trained_models/{model_name}_params.npy",summary_dict)
 
-dl     = DataLoader(dataset=data_train, collate_fn=data_utils.custom_collate_fn, shuffle=True, batch_size=50,num_workers=4)
+dl     = DataLoader(dataset=data_train, collate_fn=data_utils.custom_collate_fn, shuffle=True, batch_size=100,num_workers=4)
 dl_val = DataLoader(dataset=data_val, collate_fn=data_utils.custom_collate_fn, shuffle=False, batch_size = len(data_val),num_workers=1)
 
 ## the neural negative feedback with observation jumps
