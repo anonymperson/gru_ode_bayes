@@ -8,7 +8,7 @@ This repository provides pytorch implementation of the GRU-ODE-Bayes paper.
 
 ### Requirements
 
-The code uses Python3 and Pytorch as auto-differentiation package. The following python packages are required :
+The code uses Python3 and Pytorch as auto-differentiation package. The following python packages are required and will be automatically downloaded when installing the gru_ode_bayes package:
 
 ```
 numpy
@@ -37,6 +37,7 @@ Experiments folder contains different cases study for the GRU-ODE-Bayes. Each tr
 ### 2-D Ornstein-Uhlenbeck SDE
 Once in the double_OU folder, you can visualize some predictions of a previously trained model on newly generated data by running : 
 ```
+cd experiments/double_OU
 python double_ou_gruode.py --demo
 ```
 This will print 10 new realizations of the process along with the model predictions.
@@ -48,6 +49,7 @@ python double_ou_gruode.py
 ### Brusselator SDE
 Similarly as for the 2D OU process, 
 ```
+cd experiments/Brusselator
 python run_gruode.py --demo 
 ```
 will plot 10 new realizations of the process along with the model predictions. For retraining the full model :
